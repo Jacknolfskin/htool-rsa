@@ -1,0 +1,38 @@
+buildscript {
+    ext {
+        springBootVersion = '2.1.0.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'application'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.jacknolfskin.htool.rsa.validate'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+mainClassName = 'com.jacknolfskin.htool.rsa.validate.HtoolRsaApplication'
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+    implementation('org.springframework.boot:spring-boot-starter')
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.0.3.RELEASE'
+    compile group: 'org.bouncycastle', name: 'bcprov-jdk15on', version: '1.60'
+    compile group: 'org.apache.directory.studio', name: 'org.apache.commons.codec', version: '1.8'
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.8.1'
+    compile group: 'commons-io', name: 'commons-io', version: '2.6'
+    compile group: 'org.projectlombok', name: 'lombok', version: '1.18.2'
+    testImplementation('org.springframework.boot:spring-boot-starter-test')
+}
