@@ -6,11 +6,10 @@ SpringBoot RSA入参出参自动加解密工具
 * 上传到本地仓库
 ![image.png](https://upload-images.jianshu.io/upload_images/11222983-6327681a4c97155c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-* 在项目中引入依赖
-**compile('com.jacknolfskin.htool:htool-rsa:1.0.0-RELEASE')
+* 在项目中引入依赖compile('com.jacknolfskin.htool:htool-rsa:1.0.0-RELEASE')
 注意：这两个依赖也要引入，Base64的依赖包，不然加密会报错
 compile group: 'commons-codec', name: 'commons-codec', version: '1.11'
-compile group: 'commons-io', name: 'commons-io', version: '2.6'**
+compile group: 'commons-io', name: 'commons-io', version: '2.6'
 ![image.png](https://upload-images.jianshu.io/upload_images/11222983-34c50f5d567190d2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 * 在启动类中加入@EnableSecurity注解，同时扫描包com.jacknolfskin.htool
@@ -26,7 +25,7 @@ compile group: 'commons-io', name: 'commons-io', version: '2.6'**
 ![image.png](https://upload-images.jianshu.io/upload_images/11222983-25cabe571ce84a9e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
-使用教程地址：https://www.jianshu.com/p/722cf8525eea
+**使用教程：**https://www.jianshu.com/p/722cf8525eea
 
 ---
 #### 技术讨论 & 疑问建议 & [个人博客](https://www.jacknolfskin.top/)
