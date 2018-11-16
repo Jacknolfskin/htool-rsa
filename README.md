@@ -7,16 +7,16 @@ SpringBoot RSA入参出参自动加解密工具
 ![image.png](https://upload-images.jianshu.io/upload_images/11222983-6327681a4c97155c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 * 在项目中引入依赖
-**compile('com.jacknolfskin.htool:htool-rsa:1.0.0-RELEASE')**
-**注意：这两个依赖也要引入，Base64的依赖包，不然加密会报错** 
-**compile group: 'commons-codec', name: 'commons-codec', version: '1.11'
+**compile('com.jacknolfskin.htool:htool-rsa:1.0.0-RELEASE')
+注意：这两个依赖也要引入，Base64的依赖包，不然加密会报错
+compile group: 'commons-codec', name: 'commons-codec', version: '1.11'
 compile group: 'commons-io', name: 'commons-io', version: '2.6'**
 ![image.png](https://upload-images.jianshu.io/upload_images/11222983-34c50f5d567190d2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-* 在启动类中加入**@EnableSecurity**注解，同时扫描包**com.jacknolfskin.htool**
+* 在启动类中加入@EnableSecurity注解，同时扫描包com.jacknolfskin.htool
 ![image.png](https://upload-images.jianshu.io/upload_images/11222983-5cb62242e0b74586.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-* 在出参需要加密的方法上加上注解**@Encrypt**，在入参需要解密的方法上加上**@Decrypt**，同时需要加解密就把两个注解都加在方法上
+* 在出参需要加密的方法上加上注解@Encrypt，在入参需要解密的方法上加上@Decrypt，同时需要加解密就把两个注解都加在方法上
 ![image.png](https://upload-images.jianshu.io/upload_images/11222983-024781547a4b885b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 * 配置文件中**spring.encrypt.debug、spring.encrypt.publicKey、spring.encrypt.privateKey**三个配置选项
