@@ -1,5 +1,6 @@
 package com.jacknolfskin.htool.rsa.validate.util;
 
+import org.apache.commons.lang3.StringUtils;
 import org.bouncycastle.asn1.ASN1Sequence;
 import org.bouncycastle.asn1.pkcs.RSAPrivateKeyStructure;
 
@@ -331,7 +332,7 @@ public class RSAUtils {
     }
 
 
-    /*public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception {
         String content = "你好";
         String publicKey = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC8HaSSz1ARBkTOmythz8Zk2oKWYaLU1gA1MsQaKRj5UwA/DMdKVy7CDE070PCecTiBfqCDmdvzOn+G0G/gr4p6KXeXI00KZArXPBDSd0HSUGwuCsFpLppr1q1H4MluvMOsaiAdh7mLCnMxOag0Vjq6oBbXXM2lYkpTxBD4w90eiQIDAQAB";
         String privateKey = "MIICeAIBADANBgkqhkiG9w0BAQEFAASCAmIwggJeAgEAAoGBALwdpJLPUBEGRM6bK2HPxmTagpZhotTWADUyxBopGPlTAD8Mx0pXLsIMTTvQ8J5xOIF+oIOZ2/M6f4bQb+Cvinopd5cjTQpkCtc8ENJ3QdJQbC4KwWkummvWrUfgyW68w6xqIB2HuYsKczE5qDRWOrqgFtdczaViSlPEEPjD3R6JAgMBAAECgYEAkzXHUjP1/jyfn+cCHfsQ0F/HDZO+bzxA0WC24ZoDtyji6nQ/iMeNCcHCtuqdQgBsLbpANnwzCbZfkcqPoo78l52hIwyaFZRJb74EVTuSYL4txg0z5gIoTGkK+7n5+4i7OscBIvNKzXhuQWIwCkAfylpLin9CSqhp0g1XU5OjAWECQQD+W0Leg+UyYXny7WF+u0P16KBreDfdpMHamnvdkcu1MFR/EqhBngFbnnX6A2sPnlasKXgvgbo1S+q3juzPSikdAkEAvVTPl8VKdaRuuqhKubunwhPMvcZi5Ie8XfjWMM/saaq/H6eW5S59/xPbOQH6PiUZMq6u4QprSXvJlLZasDS7XQJBAKJotzvJT/FpWCqK8/OtsukzjirQ6ir15mmktm51h3K711gEG7c6InfTqFTpFdU1LvZizEDZPoKFZOursP1yxukCQH72XK9+EcyKE+b/6/xZJsoy1N1+J9rwWxT5RUk+ZV8GrVvg2oOdhciD3EKCXPlHj3o5QfSPNBr289rR3kbDVdECQQCle+I37l+tCY2kfYy9wF4jxKXbLPwSNp3MkslD70gY7klYAzdboPHhEnxjwlfL3qlva6moYWCEDFVtM8+OOVBA";
@@ -355,5 +356,5 @@ public class RSAUtils {
         }
         decryptBody = json.toString();
         System.out.println("解密后content: " + decryptBody);
-    }*/
+    }
 }

@@ -1,38 +1,57 @@
 buildscript {
-    ext {
-        springBootVersion = '2.1.0.RELEASE'
-    }
     repositories {
+        maven { url 'http://repo.spring.io/plugins-release' }
         mavenCentral()
     }
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.4.0.RELEASE")
+        classpath 'org.springframework.build.gradle:propdeps-plugin:0.0.7'
     }
 }
 
-apply plugin: 'java'
-apply plugin: 'maven'
-apply plugin: 'application'
-apply plugin: 'org.springframework.boot'
-apply plugin: 'io.spring.dependency-management'
+allprojects {
+    group 'com.jacknolfskin.htool'
+    version '1.0.0-RELEASE'
+    apply plugin: 'java'
+    apply plugin: 'maven'
+    apply plugin: "spring-boot"
+    apply plugin: 'propdeps'
+    apply plugin: 'propdeps-idea'
 
-group = 'com.jacknolfskin.htool.rsa.validate'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = 1.8
-mainClassName = 'com.jacknolfskin.htool.rsa.validate.HtoolRsaApplication'
+    sourceCompatibility = 1.8
+    [compileJava, compileTestJava, javadoc]*.options*.encoding = 'UTF-8'
 
-repositories {
-    mavenCentral()
-}
+    task "create-dirs" << {
+        sourceSets*.java.srcDirs*.each { it.mkdirs() }
+        sourceSets*.resources.srcDirs*.each { it.mkdirs() }
+    }
 
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
 
-dependencies {
-    implementation('org.springframework.boot:spring-boot-starter')
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.0.3.RELEASE'
-    compile group: 'org.bouncycastle', name: 'bcprov-jdk15on', version: '1.60'
-    compile group: 'org.apache.directory.studio', name: 'org.apache.commons.codec', version: '1.8'
-    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.8.1'
-    compile group: 'commons-io', name: 'commons-io', version: '2.6'
-    compile group: 'org.projectlombok', name: 'lombok', version: '1.18.2'
-    testImplementation('org.springframework.boot:spring-boot-starter-test')
+    uploadArchives {
+        repositories {
+            mavenLocal()
+        }
+    }
+
+    dependencies {
+        implementation('org.springframework.boot:spring-boot-starter')
+        compile group: 'org.bouncycastle', name: 'bcprov-jdk15on', version: '1.60'
+        compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.0.3.RELEASE'
+        compile group: 'org.apache.directory.studio', name: 'org.apache.commons.codec', version: '1.8'
+        compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.8.1'
+        compile group: 'commons-io', name: 'commons-io', version: '2.6'
+        compile group: 'commons-codec', name: 'commons-codec', version: '1.11'
+        compile group: 'org.projectlombok', name: 'lombok', version: '1.18.2'
+        testImplementation('org.springframework.boot:spring-boot-starter-test')
+
+    }
+
+    configurations.all {
+        resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+        exclude group: 'org.slf4j', module: 'slf4j-log4j12'
+    }
 }
