@@ -25,7 +25,7 @@ compile group: 'commons-io', name: 'commons-io', version: '2.6'
 ![image.png](https://upload-images.jianshu.io/upload_images/11222983-25cabe571ce84a9e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
-**使用教程：**https://www.jianshu.com/p/722cf8525eea
+使用教程：https://www.jianshu.com/p/722cf8525eea
 
 ---
 #### 技术讨论 & 疑问建议 & [个人博客](https://www.jacknolfskin.top/)
